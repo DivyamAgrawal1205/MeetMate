@@ -1,1 +1,1 @@
-print("This si auto screenshot")
+print("This is auto screenshot")
