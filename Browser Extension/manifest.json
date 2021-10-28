@@ -1,7 +1,7 @@
 { 
     "manifest_version" : 2, 
     "name" : "MeetMate", 
-    "description" : "Extension to show the current time and date", 
+    "description" : "An easy to use browser extension for your everyday online meeting needs.", 
     "version" : "1.0.0", 
     "browser_action" : { 
     "default_title" : "MeetMate" ,
