@@ -1,1 +1,11 @@
-
+{ 
+    "manifest_version" : 2, 
+    "name" : "MeetMate", 
+    "description" : "Extension to show the current time and date", 
+    "version" : "1.0.0", 
+    "browser_action" : { 
+    "default_title" : "MeetMate" ,
+    "default_popup" : "s.html"
+    }
+   } 
+   
