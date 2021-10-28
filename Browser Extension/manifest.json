@@ -5,7 +5,7 @@
     "version" : "1.0.0", 
     "browser_action" : { 
     "default_title" : "MeetMate" ,
-    "default_popup" : "s.html"
+    "default_popup" : "speech_to_text.html"
     }
    } 
    
