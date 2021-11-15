@@ -99,8 +99,9 @@
                 });
                   
                 if (speech == true) {
+                    recognition.continuous = true
                     recognition.start();
-                    recognition.addEventListener('end', recognition.start);
+                    recognition.addEventListener('end',recognition.continuous = true, recognition.start);
                 }
             </script>
                 
