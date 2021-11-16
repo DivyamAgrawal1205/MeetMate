@@ -21,16 +21,16 @@
       html2pdf()
       .from(document.getElementById("topdf"))
       .save();
-    }                       <!--this is the function for pdf generation -->
+    }                      
     </script>
 </head>
 <body>
     <section id="main">
-        <section id="sec-0">  <!-- this sec includes user login status and profile--  would probably inlcude in next update :)>
+        <section id="sec-0">  <!-- this sec includes user login status and profile--  would probably inlcude in next update :)-->
 
         </section>
         
-        <section id="sec-1">   <!-- this section includes buttons -->
+        <section id="sec-1">  
             
             <button type="button" class="btn btn-success" id="rec" title="Record">Record <i class="bi bi-camera-reels"></i> </button>
             
@@ -78,32 +78,7 @@
                 <textarea class="textarea" readonly placeholder="*Click 'Speech-to-text' to toggle captions*" id = "b" contenteditable="false" >
                 </textarea>
             </div>
-            <script>
-                var speech = true; <!-- This is a speech to text script -->
-                window.SpeechRecognition = window.SpeechRecognition
-                                || window.webkitSpeechRecognition;
-          
-                const recognition = new SpeechRecognition();
-                recognition.interimResults = true;
-                const words = document.querySelector('.words');
-                words.appendChild(b);
-          
-                recognition.addEventListener('result', e => {
-                    const transcript = Array.from(e.results)
-                        .map(result => result[0])
-                        .map(result => result.transcript)
-                        .join('')
-
-                        document.getElementById("b").innerHTML = transcript;
-                        console.log(transcript);
-                });
-                  
-                if (speech == true) {
-                    recognition.continuous = true
-                    recognition.start();
-                    recognition.addEventListener('end',recognition.continuous = true, recognition.start);
-                }
-            </script>
+            <script src= "sp2txt.js"></script>
                 
                
         </section>
