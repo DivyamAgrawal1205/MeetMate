@@ -32,18 +32,19 @@
         
         <section id="sec-1">  
             
-            <button type="button" class="btn btn-success" id="rec" title="Record">Record <i class="bi bi-camera-reels"></i> </button>
+            <button type="button" class="btn btn-success" id="rec" title="Record" onclick="startRecord()" >Record <i class="bi bi-camera-reels"></i> </button>
             
-            <button class="button is-warning" id="pau" title="Pause">Pause <i class="bi bi-pause-circle"></i> </button>
+            <!-- <button class="button is-warning" id="pau" title="Pause">Pause <i class="bi bi-pause-circle"></i> </button>
             
             <button class="button is-success" id="res" title="Resume">Resume <i class="bi bi-play-circle"></i> </button>
 
-            <!-- <div class="form-check form-switch">
+             <div class="form-check form-switch">
                 <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
                 <label class="form-check-label" for="flexSwitchCheckDefault">ASS</label>
               </div> -->
             
-            <button type="button" class="btn btn-danger" id="stop" title="Stop recording" disabled>Stop Recording <i class="bi bi-stop-circle"></i> </button>
+            <button type="button" class="btn btn-danger" id="stop" title="Stop recording" onclick="stopScreen()">Stop Recording <i class="bi bi-stop-circle"></i> </button>
+            <a href="#"  id="downld"  ><button type = "button" class="btn btn-info"> Download Video <i class="bi-play-circle" ></i></button></a>
         </section>
         <script src="scrdr.js"> </script>
         <section id="sec-2">
