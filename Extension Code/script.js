@@ -34,7 +34,7 @@ stopbt.addEventListener('click', function() {
     opacity : 0.5;
     cursor: not-allowed;
     `
-    stopbt.disabled = true;
+    stopbt.disabled = false;
 })
 
 speech_nt_clk.addEventListener('click', function() {
