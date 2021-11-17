@@ -10,5 +10,4 @@ recognition.addEventListener('result', e => {
         .join('')
 
         document.getElementById("b").innerHTML = transcript;
-        console.log(transcript);
 });
