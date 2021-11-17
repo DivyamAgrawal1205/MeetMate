@@ -23,6 +23,12 @@
       .save();
     }                      
     </script>
+    <script>
+        function sp2txton()
+        {
+            recognition.start();
+        }
+    </script>
 </head>
 <body>
     <section id="main">
@@ -71,7 +77,7 @@
                 <i class="bi bi-person-circle" id="host" title="Meet Host"></i>    <!-- Your Meeting Host -->                  
                 <button type="button" class="btn btn-info" title="Download the report" onclick="goPDF()">Download <i class="fas fa-arrow-alt-circle-down"></i> </button>
                 <button type="button" class="btn btn-warning" title="Warning">Warning <i class="fas fa-exclamation-circle"></i> </button>
-                <button type="button" class="btn btn-light" id="speech_nt_clk" title="Captions-off">Speech-to-text <i class="far fa-closed-captioning"></i> </button>
+                <button type="button" class="btn btn-light" id="speech_nt_clk" title="Captions-off" onclick="sp2txton()">Speech-to-text <i class="far fa-closed-captioning"></i> </button>
                 <button type="button" class="btn btn-dark" id="speech_clk" title="Captions-on">Speech-to-text <i class="fas fa-closed-captioning"></i> </button>
 
             </div>
