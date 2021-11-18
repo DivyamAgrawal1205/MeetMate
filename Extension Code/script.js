@@ -8,33 +8,33 @@ const speech_clkbt = document.getElementById('speech_clk');
 
 recbt.addEventListener('click', function() {
     recbt.style.display = 'none';
-    paubt.style.display = 'inline-block';
+    // paubt.style.display = 'inline-block';
     stopbt.style.cssText = `
-    opacity : 1;
+    display: inline-block;
     cursor: pointer;
     `
-    stopbt.disabled = false;
+    
 })
 
-paubt.addEventListener('click', function() {
-    paubt.style.display = 'none';
-    resbt.style.display = 'inline-block';
-})
+// paubt.addEventListener('click', function() {
+//     paubt.style.display = 'none';
+//     resbt.style.display = 'inline-block';
+// })
 
-resbt.addEventListener('click', function() {
-    resbt.style.display = 'none';
-    paubt.style.display = 'inline-block';
-})
+// resbt.addEventListener('click', function() {
+//     resbt.style.display = 'none';
+//     paubt.style.display = 'inline-block';
+// })
 
 stopbt.addEventListener('click', function() {
-    resbt.style.display = 'none';
-    paubt.style.display = 'none';
+    // resbt.style.display = 'none';
+    // paubt.style.display = 'none';
     recbt.style.display = 'inline-block';
     stopbt.style.cssText = `
-    opacity : 0.5;
-    cursor: not-allowed;
+    display: none;
+    
     `
-    stopbt.disabled = false;
+    
 })
 
 speech_nt_clk.addEventListener('click', function() {
