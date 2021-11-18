@@ -40,7 +40,7 @@ function onstop() {
     completeBlob = new Blob(chunks, {
         type: chunks[0].type
     });
-    let downloadButton = document.getElementById('downld');
+    let downloadButton = document.getElementById('download');
     downloadButton.href = URL.createObjectURL(completeBlob);
     downloadButton.download = Date.now() + '.mp4';
 }
