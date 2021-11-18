@@ -8,7 +8,7 @@ recognition.addEventListener('result', e => {
     const transcript = Array.from(e.results)
         .map(result => result[0])
         .map(result => result.transcript)
-        .join('')
+        .join('') //joining the result by spaces to create representable statements
 
         document.getElementById("b").innerHTML = transcript; //inserting result in the txt area
 });
