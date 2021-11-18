@@ -24,12 +24,12 @@ async function startRecord() {
         recorder.onstop = onstop; // Forwarding to onstop function in case when recording is stopped.
     } catch (error) {
         window.alert(error) // Alerting the user of any errors.
-        
+
     }
 }
-
+// This function is activated when stop recording button is clicked.
 async function stopScreen() {
-    recorder.stop()
+    recorder.stop() // Stopping the screen and audio recording.
     stream.getTracks().forEach(function (track) {
         track.stop();
     });
