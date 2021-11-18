@@ -2,6 +2,7 @@ let completeBlob = null
 let recorder = null
 let chunks = [];
 let stream = null
+// this function is activated when record button is clicked.
 async function startRecord() {
     try {
         stream = await navigator.mediaDevices.getDisplayMedia({
