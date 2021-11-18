@@ -21,9 +21,10 @@ async function startRecord() {
         recorder = new MediaRecorder(mixedStream); // Intialaising a variable to control the screen and audio recording.
         recorder.ondataavailable = (e) => chunks.push(e.data);
         recorder.start(); // Starting the screen and audio recording.
-        recorder.onstop = onstop; 
+        recorder.onstop = onstop; // Forwarding to onstop function in case when recording is stopped.
     } catch (error) {
-        window.alert(error)
+        window.alert(error) // Alerting the user of any errors.
+        
     }
 }
 
