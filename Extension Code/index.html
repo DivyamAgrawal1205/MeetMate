@@ -16,28 +16,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
     <script>
-    function goPDF () {
-      html2pdf()
-      .from(document.getElementById("topdf"))
-      .save();
-    }                      
+        function goPDF () {
+        html2pdf()
+        .from(document.getElementById("topdf"))
+        .save();
+        }                      
     </script>
+
     <script>
         function sp2txton()
         {
             recognition.start();
         }
     </script>
+
 </head>
 <body>
     <section id="main">
-        <section id="sec-0">  <!-- this sec includes user login status and profile--  would probably inlcude in next update :)-->
+        <section id="sec-0"> </section>  <!-- this sec includes user login status and profile--  would probably inlcude in next update :)-->
 
-        </section>
-        
-        <section id="sec-1">  
-            
+        <section id="sec-1">            
             <button type="button" class="btn btn-success" id="rec" title="Record" onclick="startRecord()" >Record <i class="bi bi-camera-reels"></i> </button>
             
             <!-- <button class="button is-warning" id="pau" title="Pause">Pause <i class="bi bi-pause-circle"></i> </button>
@@ -82,19 +82,14 @@
             </div>
             <div class="words" id = "topdf" contenteditable="true" >
                 <textarea class="textarea" readonly placeholder="*Click 'Speech-to-text' to toggle captions*" id = "b" contenteditable="false" ></textarea>
-            </div>
-            
-                
-               
+            </div>             
         </section>
 
-    </section>
-    
+    </section>    
 
     <script src="scrdr.js"> </script>
     <script src= "sp2txt.js"></script>
-    <script async src="script.js"></script>
-    
+    <script async src="script.js"></script>    
 
 </body>
 </html>
