@@ -5,7 +5,7 @@ let stream = null
 // this function is activated when record button is clicked.
 async function startRecord() {
     try {
-        stream = await navigator.mediaDevices.getDisplayMedia({
+        stream = await navigator.mediaDevices.getDisplayMedia({  //This variable fetches the user media i.e. Display Screen
             video: {
                 mediaSource: 'screen'
             },
