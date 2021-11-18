@@ -3,6 +3,7 @@ var recognition = new SpeechRecognition(); //initialising recognition variable f
 recognition.continuous = true; // making speech recognition continuous
 var words = document.querySelector('.words'); //
 words.appendChild(b);
+//mapping the speech recognition result from an Array to a transcript variable
 recognition.addEventListener('result', e => {
     const transcript = Array.from(e.results)
         .map(result => result[0])
