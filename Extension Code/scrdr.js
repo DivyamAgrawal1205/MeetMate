@@ -18,10 +18,10 @@ async function startRecord() {
 			},
         });
         mixedStream = new MediaStream([...stream.getTracks(), ...audio.getTracks()])  //Intialising a variable that starts both screen recording and audio recording.
-        recorder = new MediaRecorder(mixedStream);
+        recorder = new MediaRecorder(mixedStream); // Intialaising a variable to control the screen and audio recording.
         recorder.ondataavailable = (e) => chunks.push(e.data);
-        recorder.start();
-        recorder.onstop = onstop;
+        recorder.start(); // Starting the screen and audio recording.
+        recorder.onstop = onstop; 
     } catch (error) {
         window.alert(error)
     }
