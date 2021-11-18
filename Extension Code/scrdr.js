@@ -2,22 +2,22 @@ let completeBlob = null
 let recorder = null
 let chunks = [];
 let stream = null
-// this function is activated when record button is clicked.
+// This function is activated when record button is clicked.
 async function startRecord() {
     try {
-        stream = await navigator.mediaDevices.getDisplayMedia({  //This variable fetches the user media i.e. Display Screen
+        stream = await navigator.mediaDevices.getDisplayMedia({  //This variable fetches the user media i.e. Display Screen.
             video: {
                 mediaSource: 'screen'  //Recording screen through stream variable.
             },
         })
-        audio = await navigator.mediaDevices.getUserMedia({  // This variable fetches theuser media i.e. microphone.
+        audio = await navigator.mediaDevices.getUserMedia({  // This variable fetches the user media i.e. microphone.
 			audio: {
 				echoCancellation: true,
 				noiseSuppression: true,
 				sampleRate: 44100,
 			},
         });
-        mixedStream = new MediaStream([...stream.getTracks(), ...audio.getTracks()])
+        mixedStream = new MediaStream([...stream.getTracks(), ...audio.getTracks()])  //Intialising a variable that starts both screen recording and audio recording.
         recorder = new MediaRecorder(mixedStream);
         recorder.ondataavailable = (e) => chunks.push(e.data);
         recorder.start();
