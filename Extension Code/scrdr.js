@@ -39,11 +39,11 @@ async function stopScreen() {
 }
 
 function onstop() {
-    completeBlob = new Blob(chunks, {
+    completeBlob = new Blob(chunks, { // Creating the address for URL creation.
         type: chunks[0].type
     });
-    let downloadButton = document.getElementById('download');
-    downloadButton.href = URL.createObjectURL(completeBlob);
-    downloadButton.download = Date.now() + '.mp4';
+    let downloadButton = document.getElementById('download'); // Fetching download button from index.html.
+    downloadButton.href = URL.createObjectURL(completeBlob); // Creating the URl.
+    downloadButton.download = Date.now() + '.mp4'; // Naming the vedio file.
 }
 
