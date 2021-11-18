@@ -30,11 +30,11 @@ async function startRecord() {
 // This function is activated when stop recording button is clicked.
 async function stopScreen() {
     recorder.stop() // Stopping the screen and audio recording.
-    stream.getTracks().forEach(function (track) {
+    stream.getTracks().forEach(function (track) { // Stopping and storing the screen recording.
         track.stop();
     });
     audio.getTracks().forEach(function (track) {
-        track.stop();
+        track.stop(); // Stopping and storing the audio recording.
     });
 }
 
