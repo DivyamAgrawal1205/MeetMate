@@ -7,10 +7,10 @@ async function startRecord() {
     try {
         stream = await navigator.mediaDevices.getDisplayMedia({  //This variable fetches the user media i.e. Display Screen
             video: {
-                mediaSource: 'screen'
+                mediaSource: 'screen'  //Recording screen through stream variable.
             },
         })
-        audio = await navigator.mediaDevices.getUserMedia({
+        audio = await navigator.mediaDevices.getUserMedia({  // This variable fetches theuser media i.e. microphone.
 			audio: {
 				echoCancellation: true,
 				noiseSuppression: true,
