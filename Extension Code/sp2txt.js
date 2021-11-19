@@ -2,7 +2,7 @@ var SpeechRecognition = window.webkitSpeechRecognition; //initialising the speec
 var recognition = new SpeechRecognition(); //initialising recognition variable from SpeechRecognition object
 recognition.continuous = true; // making speech recognition continuous
 var words = document.querySelector('.words'); //
-words.appendChild(b);
+words.appendChild(textArea);
 //mapping the speech recognition result from an Array to a transcript variable
 recognition.addEventListener('result', e => {
     const transcript = Array.from(e.results)
@@ -10,5 +10,5 @@ recognition.addEventListener('result', e => {
         .map(result => result.transcript)
         .join('') //joining the result by spaces to create representable statements
 
-        document.getElementById("b").innerHTML = transcript; //inserting result in the txt area
+        document.getElementById("textArea").innerHTML = transcript; //inserting result in the txt area
 });
