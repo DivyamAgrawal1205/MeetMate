@@ -17,20 +17,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kurenaido&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 
-    <script>
-        function goPDF (){ // This function gets activated  when we click Download button calls html2pdf API and saves the contents of the element of id = "topdf"
-        html2pdf()
-        .from(document.getElementById("topdf"))
-        .save();
-        }                      
-    </script>
-
-    <script>
-        function sp2txton(){ // This function gets activated when we click Speech To Text button and starts Speech Recognition 
-            recognition.start();
-        }
-    </script>
-
 </head>
 <body>
     <section id="main">
@@ -38,15 +24,13 @@
 
         <section id="sec-1">   <!-- This Section corresponds to Screen Recording Feature-->         
             <button type="button" class="btn btn-success" id="record" title="Record" onclick="startRecord()" >Record <i class="bi bi-camera-reels"></i> </button> <!-- This is the Record Button which calls startRecord function in scrdr.js to start screen recording-->
-            
+            <!-- Pause and Resume Button may come in our next update-->
             <!-- <button class="button is-warning" id="pau" title="Pause">Pause <i class="bi bi-pause-circle"></i> </button>
-            
             <button class="button is-success" id="res" title="Resume">Resume <i class="bi bi-play-circle"></i> </button>
              <div class="form-check form-switch">
                 <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
                 <label class="form-check-label" for="flexSwitchCheckDefault">ASS</label>
-              </div> -->
-            
+              </div> -->            
             <button type="button" class="btn btn-danger" id="stop" title="Stop recording" onclick="stopScreen()">Stop Recording <i class="bi bi-stop-circle"></i> </button><!-- This is the Stop Recording button which calls stopScreen function in scrdr.js to stop screen recording-->
             <a href="#"  id="download"  ><button type = "button" class="btn btn-info" id="dwn_vid_btn" disabled> Download Video <i class="bi-play-circle" ></i></button></a><!-- This is the Download button which downloads the most recent recorded session-->
         </section>
@@ -73,22 +57,22 @@
         <section id="sec-3"> <!-- This section corresponds to the Speech to Text Feature -->
             <div id="alerts-cont">
                <!-- <i class="bi bi-person-circle" id="host" title="Meet Host"></i> -->   <!-- Your Meeting Host , This would also be there in our next update -->                  
-                <button type="button" class="btn btn-info" title="Download the report" onclick="goPDF()">Download <i class="fas fa-arrow-alt-circle-down"></i> </button> <!-- This is the Download Button which calls goPDF() function and downloads a PDF file  -->
+                <button type="button" class="btn btn-info" title="Download the report" onclick="goPDF()">Download <i class="fas fa-arrow-alt-circle-down"></i> </button> <!-- This is the Download Button which calls goPDF() function from PDFgen.js and downloads a PDF file  -->
                 <button type="button" class="btn btn-warning" title="Taking a screenshot" id ="ScrnShot">ScreenShot <i class="fa">&#xf0c4</i> </button>  <!-- This is ScreenShot button that calls TakeScreenShot() function in ScreenShot.js to take the Screen Shot--> <!-- fa fa-scissors should have worked in i tag, Ankit please check-->
-                <button type="button" class="btn btn-light" id="speech_nt_clk" title="Captions-off" onclick="sp2txton()">Speech-to-text <i class="far fa-closed-captioning"></i> </button><!-- This button is Speech To Text Off Button and calls sp2txton() funtion to start speech Recognition-->
-                <button type="button" class="btn btn-dark" id="speech_clk" title="Captions-on">Speech-to-text <i class="fas fa-closed-captioning"></i> </button><!-- This is Speech to Text On button gets activated when Speech To Text Off button id clicked-->
+                <button type="button" class="btn btn-light" id="speech_nt_clk" title="Captions-off" onclick="sp2txton()">Speech-to-text <i class="far fa-closed-captioning"></i> </button><!-- This button is Speech To Text Off Button and calls sp2txton() funtion from sp2txt.js to start speech Recognition-->
+                <button type="button" class="btn btn-dark" id="speech_clk" title="Captions-on">Speech-to-text <i class="fas fa-closed-captioning"></i> </button><!-- This is Speech to Text On button gets activated when Speech To Text Off button is clicked-->
 
             </div>
-            <div class="words" id = "topdf" contenteditable="true" > <!-- This division with id="topdf" is sccessed by goPDF() function-->
-                <textarea class="textarea" readonly placeholder="*Click 'Speech-to-text' to toggle captions*" id = "textArea" contenteditable="false" ></textarea><!-- This area is used to show speech to Text and is used by sp2txt.js-->
+            <div class="words" id = "topdf" contenteditable="true" > <!-- This division with id="topdf" is sccessed by goPDF() function in PDFgen.js-->
+                <textarea class="textarea" readonly placeholder="*Click 'Speech-to-text' to toggle captions*" id = "textArea" contenteditable="false" ></textarea><!-- This area is used to show speech to Text result and is used by sp2txt.js-->
             </div>             
         </section>
 
     </section>    
 
-    <script src="scrdr.js"> </script>
-    <script src= "sp2txt.js"></script>
-    <script async src="script.js"></script>    
-
+    <script src="scrdr.js"> </script> <!-- source directed to Screen Recording code/module -->
+    <script src= "sp2txt.js"></script> <!-- source directed to Speech Recognition code/module -->
+    <script async src="script.js"></script> <!-- source directed to main Script code/module --> 
+    <script src="PDFgen.js"></script>  <!-- source directed to PDF Generation code/module -->
 </body>
 </html>
