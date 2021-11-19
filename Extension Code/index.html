@@ -18,8 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
 
     <script>
-        function goPDF () // This function gets activated  when we click Download button calls html2pdf API and saves the contents of the element of id = "topdf"
-        {
+        function goPDF (){ // This function gets activated  when we click Download button calls html2pdf API and saves the contents of the element of id = "topdf"
         html2pdf()
         .from(document.getElementById("topdf"))
         .save();
@@ -27,8 +26,7 @@
     </script>
 
     <script>
-        function sp2txton() // This function gets activated when we click Speech To Text button and starts Speech Recognition 
-        {
+        function sp2txton(){ // This function gets activated when we click Speech To Text button and starts Speech Recognition 
             recognition.start();
         }
     </script>
