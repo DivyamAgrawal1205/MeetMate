@@ -44,6 +44,6 @@ function onstop() {
     });
     let downloadButton = document.getElementById('download'); // Fetching download button from index.html.
     downloadButton.href = URL.createObjectURL(completeBlob); // Creating the URl.
-    downloadButton.download = Date.now() + '.mp4'; // Naming the vedio file.
+    downloadButton.download = Date.now() + '.mp4'; // Naming the video file.
 }
 
