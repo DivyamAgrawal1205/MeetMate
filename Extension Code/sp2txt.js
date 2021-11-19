@@ -1,3 +1,6 @@
+async function sp2txton(){ // This function gets activated when we click Speech To Text button and starts Speech Recognition
+    recognition.start(); // Speech recognition start
+}
 var SpeechRecognition = window.webkitSpeechRecognition; //initialising the speechRecognition object from webkitSpeechRecognition API 
 var recognition = new SpeechRecognition(); //initialising recognition variable from SpeechRecognition object
 recognition.continuous = true; // making speech recognition continuous
