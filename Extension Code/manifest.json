@@ -9,10 +9,6 @@
         
     },
 
-    "background" : {
-        "scripts" : ["event_script.js"]
-    },
-
     "icons": {"128": "meetmate128.png"},
 
     "manifest_version" : 2,
