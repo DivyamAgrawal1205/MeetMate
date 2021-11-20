@@ -9,16 +9,22 @@
         
     },
 
+    "background" : {
+        "scripts" : ["event_script.js"]
+    },
+
     "icons": {"128": "meetmate128.png"},
 
     "manifest_version" : 2,
+
+    "permissions" : ["tabs","audioCapture","storage","videoCapture","desktopCapture"],
 
     "content_scripts" :[
         {
             "matches": [
                 "<all_urls>"
             ],
-            "js": ["script.js"]
+            "js": ["script.js", "scrdr.js", "sp2txt.js", "PDFgen.js"]
         }
     ]
 }
