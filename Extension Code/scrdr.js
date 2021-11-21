@@ -42,6 +42,8 @@ function onstop() {
     completeBlob = new Blob(chunks, { // Creating the address for URL creation.
         type: chunks[0].type // marking the type of file as the same as the type of chunks variable
     });
+    chunks = []; // by emptying chunks, we can now download different recorded videos multiple times
+                // as without this, it used to download only the first session recorded even after recording multiple times 
     let downloadButton = document.getElementById('download'); // Fetching download button from index.html.
     downloadButton.href = URL.createObjectURL(completeBlob); // Creating the URl.
     downloadButton.download = Date.now() + '.mp4'; // Naming the video file.
