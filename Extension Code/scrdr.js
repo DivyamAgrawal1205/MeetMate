@@ -32,12 +32,12 @@ async function startRecord() {
         //hiding the Stop Recording Button
         stopButton.style.cssText = `
             display: none;` // in case of any error , reactivating the Record button Automatically
-
     }
 }
+
 // This function is activated when stop recording button is clicked.
 async function stopScreen() {
-    recorder.stop() // Stopping the screen and audio recording.
+    recorder.stop(); // Stopping the screen and audio recording.
     stream.getTracks().forEach(function (track) { 
         track.stop(); // Stopping the screen recording.
     });
@@ -46,6 +46,8 @@ async function stopScreen() {
     });
 }
 
+// coming to this function when recording is stopped
+// this function mostly is used to download the video file
 function onstop() {
     completeBlob = new Blob(chunks, { // Creating the address for URL creation.
         type: chunks[0].type // marking the type of file as the same as the type of chunks variable
