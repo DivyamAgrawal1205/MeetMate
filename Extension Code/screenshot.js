@@ -31,6 +31,8 @@ async function TakeScreenShot(){
     let currentDateString = currentDate.getDate() + '-' + (currentDate.getMonth() + 1) + '-' + currentDate.getFullYear(); // creating a string in Indian Date Format
     let dateTimeString = currentDateString + ',' + currentDate.getHours()  + "-"+  currentDate.getMinutes() + '-' + currentDate.getSeconds(); // creating final date string adding time
 
+    shotTime.innerHTML = dateTimeString;
+    
     shotCanvasContext = shotCanvas.getContext('2d');
     shotCanvasContext.drawImage(shotMap , 0 , 0 ,800, 450 );
 }
