@@ -17,7 +17,9 @@ async function TakeScreenShot(){
     shotCanvas = document.createElement('canvas');
     shotCanvas.width = 800;           // this width coincedentially matches the width of the pdf so we used it!
     shotCanvas.height = 450;           // also , to maintain general 16:9 ratio of screen for optimal screen shot , we used this value.
-
+    
+    //To display Date and Time
+    
     pageBody = document.getElementsByTagName("body")[0];
     pageBody.appendChild(shotCanvas);
 
