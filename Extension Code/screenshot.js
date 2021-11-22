@@ -23,8 +23,8 @@ async function TakeScreenShot(){
      // paragraph tag was the simplest element where we could have inserted the canvas
      // we fetched the paragraph by its tag and not by its id as fetching by id just don't work
      //so we fetched the paragraph tag using its tag name , which had the id "screenshotArea"
-    
-    pageBody = document.getElementsByTagName("body")[0];
+    pageBody = document.getElementsByTagName("p")[0];
+    paraBody.appendChild(shotTime);
     pageBody.appendChild(shotCanvas);
 
     shotCanvasContext = shotCanvas.getContext('2d');
