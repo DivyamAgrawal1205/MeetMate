@@ -95,12 +95,12 @@ img {
 #stop {
     /* cursor: not-allowed;
     opacity: 0.5; */
-    display: none;
+    display: none;        /*Currently styles have been changed in JS */
     
 }
 
 textarea {
-    overflow-y: auto;
+    overflow-y: auto;    /* Scrollable*/
     display: inline-block;
     height: 40vh !important;
     resize: none;
