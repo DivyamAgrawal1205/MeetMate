@@ -41,15 +41,15 @@ button:focus {
 
 
 
-#tips {
-    height: fit-content;
+#tips { /* currently not in use */
+    height: fit-content; /* adjustable */
     width: 20%;
     background-color: aquamarine;
     
     
     
 }
-#status-cont {
+#status-cont {  /* attentiveness container */
     display: flex;
     text-align: center;
 }
@@ -63,7 +63,7 @@ button:focus {
 h3 {
     margin-bottom: 2%;
     margin-top: 0;
-    font-weight: 600 !important;
+    font-weight: 600 !important; /* avoiding conflict with css framework */
     font-size: 20px;
     
 }
@@ -78,35 +78,35 @@ img {
 
 #alerts-cont {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /*Flex properties */
     align-items: center;
 }
 
 #host {
-    font-size: 2rem;
+    font-size: 2rem;  /* relative sizing*/
     margin-top: 1.5%;
-    cursor: pointer;
+    cursor: pointer;   /*clickable */
 }
 
 #speech_clk {
-    display: none;
+    display: none;   /*making toggling effect */
 }
 
 #stop {
     /* cursor: not-allowed;
     opacity: 0.5; */
-    display: none;
+    display: none;        /*Currently styles have been changed in JS */
     
 }
 
 textarea {
-    overflow-y: auto;
+    overflow-y: auto;    /* Scrollable*/
     display: inline-block;
     height: 40vh !important;
     resize: none;
     margin-top: 2%;
     background-color: #CEE5D0;
-    border: 2px solid #888 !important;
+    border: 2px solid #888 !important;  /* Avoiding conflicts*/
     border-radius: 10px !important;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: darkslateblue !important;
@@ -123,11 +123,11 @@ textarea {
 } */
 
 .textarea::-webkit-scrollbar {
-    width: 12px;
+    width: 12px;   
 }
  
 .textarea::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3); /*Custom styles to the scroll bar */
     border-radius: 10px;
 }
  
