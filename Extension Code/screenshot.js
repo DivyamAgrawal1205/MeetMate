@@ -23,10 +23,16 @@ async function TakeScreenShot(){
      // paragraph tag was the simplest element where we could have inserted the canvas
      // we fetched the paragraph by its tag and not by its id as fetching by id just don't work
      //so we fetched the paragraph tag using its tag name , which had the id "screenshotArea"
+    pageBody = document.getElementsByTagName("p")[0];
+    paraBody.appendChild(shotTime);
+    pageBody.appendChild(shotCanvas);//inserting(or appending) the canvas in paragraph(id : screenshotArea)
     
-    pageBody = document.getElementsByTagName("body")[0];
-    pageBody.appendChild(shotCanvas);
+    let currentDate = new Date(); // acessing the whole date
+    let currentDateString = currentDate.getDate() + '-' + (currentDate.getMonth() + 1) + '-' + currentDate.getFullYear(); // creating a string in Indian Date Format
+    let dateTimeString = currentDateString + ',' + currentDate.getHours()  + "-"+  currentDate.getMinutes() + '-' + currentDate.getSeconds(); // creating final date string adding time
 
+    shotTime.innerHTML = dateTimeString;
+    
     shotCanvasContext = shotCanvas.getContext('2d');
     shotCanvasContext.drawImage(shotMap , 0 , 0 ,800, 450 );
 }
