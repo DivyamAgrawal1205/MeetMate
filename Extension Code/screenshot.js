@@ -15,8 +15,8 @@ async function TakeScreenShot(){
     // also we used canvas element as it only shows itself in the pdf
     //As we have to display a new image everytime when the Screenshot Button is clicked , we are adding a new canvas element.  
     shotCanvas = document.createElement('canvas');
-    shotCanvas.width = 800;
-    shotCanvas.height = 450;
+    shotCanvas.width = 800;           // this width coincedentially matches the width of the pdf so we used it!
+    shotCanvas.height = 450;           // also , to maintain general 16:9 ratio of screen for optimal screen shot , we used this value.
 
     pageBody = document.getElementsByTagName("body")[0];
     pageBody.appendChild(shotCanvas);
