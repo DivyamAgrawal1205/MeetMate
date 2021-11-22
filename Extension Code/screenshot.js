@@ -10,7 +10,6 @@ async function TakeScreenShot(){
     shotMap = await shotRecorder.grabFrame();       // storing all the image data in a variable
     shotStream.stop();                             // stopping the recording as the work is done to grab an image
 
-    
     // To display the picture to the user in the pdf , we have to draw the image(reason explained in PDFgen.js),
     // also we used canvas element as it only shows itself in the pdf
     //As we have to display a new image everytime when the Screenshot Button is clicked , we are adding a new canvas element.  
@@ -19,6 +18,11 @@ async function TakeScreenShot(){
     shotCanvas.height = 450;           // also , to maintain general 16:9 ratio of screen for optimal screen shot , we used this value.
     
     //To display Date and Time
+    shotTime = document.createElement('p');
+    
+     // paragraph tag was the simplest element where we could have inserted the canvas
+     // we fetched the paragraph by its tag and not by its id as fetching by id just don't work
+     //so we fetched the paragraph tag using its tag name , which had the id "screenshotArea"
     
     pageBody = document.getElementsByTagName("body")[0];
     pageBody.appendChild(shotCanvas);
