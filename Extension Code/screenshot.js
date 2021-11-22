@@ -6,8 +6,8 @@ async function TakeScreenShot(){
         },
     });
     shotStream = scShot.getVideoTracks()[0];  //recording the first element of the recording i.e. Image
-    shotRecorder = new ImageCapture(shotStream);
-    shotMap = await shotRecorder.grabFrame();
+    shotRecorder = new ImageCapture(shotStream);    // capturing the image in a variable
+    shotMap = await shotRecorder.grabFrame();       // storing all the image data in a variable
     shotStream.stop();
 
     shotCanvas = document.createElement('canvas');
