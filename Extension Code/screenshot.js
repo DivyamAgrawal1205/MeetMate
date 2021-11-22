@@ -20,9 +20,9 @@ async function TakeScreenShot(){
     //To display Date and Time
     shotTime = document.createElement('p');
     
-     // paragraph tag was the simplest element where we could have inserted the canvas
-     // we fetched the paragraph by its tag and not by its id as fetching by id just don't work
-     //so we fetched the paragraph tag using its tag name , which had the id "screenshotArea"
+    // paragraph tag was the simplest element where we could have inserted the canvas
+    // we fetched the paragraph by its tag and not by its id as fetching by id just don't work
+    //so we fetched the paragraph tag using its tag name , which had the id "screenshotArea"
     paraBody = document.getElementsByTagName("p")[0];
     paraBody.appendChild(shotTime);
     pageBody.appendChild(shotCanvas);//inserting(or appending) the canvas in paragraph(id : screenshotArea)
