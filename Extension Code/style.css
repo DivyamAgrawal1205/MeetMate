@@ -1,5 +1,5 @@
 * {
-    font-family: 'Zen Kurenaido', sans-serif;
+    font-family: 'Zen Kurenaido', sans-serif;  /*entire font */
     
 }
 
@@ -15,14 +15,14 @@ body {
     padding: 1%;
     width: 30vw;
     min-width: 400px;
-    height: inherit;
+    height: inherit;  /* from the parent element*/
     
 }
 
 button {
     cursor: pointer; /* making clickable */
     font-size: 15px;
-    font-weight: 600 !important;
+    font-weight: 600 !important;  /* avoiding conflict with css frameworks*/
     padding: 1.2%;
     border-radius: 10px;
     
