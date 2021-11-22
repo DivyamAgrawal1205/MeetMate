@@ -52,10 +52,15 @@ function onstop() {
     completeBlob = new Blob(chunks, { // Creating the address for URL creation.
         type: chunks[0].type // marking the type of file as the same as the type of chunks variable
     });
-    chunks = []; // by emptying chunks, we can now download different recorded videos multiple times
-                // as without this, it used to download only the first session recorded even after recording multiple times 
+    // By emptying chunks, we can now download different recorded videos multiple times!
+    // As without this, it used to download only the first session recorded even after recording multiple times 
+    chunks = [];  
     let downloadButton = document.getElementById('download'); // Fetching download button from index.html.
     downloadButton.href = URL.createObjectURL(completeBlob); // Creating the URl.
-    downloadButton.download = Date.now() + '.mp4'; // Naming the video file.
+    //to acess current date and time
+    let currentDate = new Date(); // acessing the whole date
+    let currentDateString = currentDate.getDate() + '-' + (currentDate.getMonth() + 1) + '-' + currentDate.getFullYear(); // creating a string in Indian Date Format
+    let dateTimeString = currentDateString + ',' + currentDate.getHours()  + "-"+  currentDate.getMinutes(); // creating final date string
+    downloadButton.download = 'MeetMateVideo_' + dateTimeString + '.mp4'; // Naming the video file.
 }
 
