@@ -26,7 +26,12 @@ async function startRecord() {
         recorder.onstop = onstop; // Forwarding to onstop function in case when recording is stopped.
     } 
     catch (error) {
-        window.alert(error) // Alerting the user of any errors.
+        const recordButton = document.getElementById('record'); // using Record Button from index.html 
+        const stopButton = document.getElementById('stop'); // using Stop Recording Button from index.html 
+        recordButton.style.display = 'inline-block';  // activating the Record Button again
+        //hiding the Stop Recording Button
+        stopButton.style.cssText = `
+            display: none;` // in case of any error , reactivating the Record button Automatically
 
     }
 }
