@@ -33,6 +33,6 @@ async function TakeScreenShot(){
 
     shotTime.innerHTML = dateTimeString;
     
-    shotCanvasContext = shotCanvas.getContext('2d');
-    shotCanvasContext.drawImage(shotMap , 0 , 0 ,800, 450 );
+    shotCanvasContext = shotCanvas.getContext('2d');    // accessing the canvas element's context
+    shotCanvasContext.drawImage(shotMap , 0 , 0 ,800, 450 );   // drawing the image with the same dimensions of the canvas tag to cover the whole image
 }
