@@ -20,7 +20,7 @@ body {
 }
 
 button {
-    cursor: pointer;
+    cursor: pointer; /* making clickable */
     font-size: 15px;
     font-weight: 600 !important;
     padding: 1.2%;
