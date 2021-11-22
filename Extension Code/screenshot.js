@@ -2,10 +2,10 @@
 async function TakeScreenShot(){    
     scShot = await navigator.mediaDevices.getDisplayMedia({ //this variable fetches the display media i.e. Display Screen 
         video: {
-            mediaSource : 'screen'
+            mediaSource : 'screen'   //Recording screen through stream variable.
         },
     });
-    shotStream = scShot.getVideoTracks()[0];
+    shotStream = scShot.getVideoTracks()[0];  //recording the first element of the recording i.e. Image
     shotRecorder = new ImageCapture(shotStream);
     shotMap = await shotRecorder.grabFrame();
     shotStream.stop();
