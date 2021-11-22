@@ -1,5 +1,5 @@
-let completeBlob = null //initialing a variable that would help in creation of URL
-let recorder = null // initialising recorder variable
+let completeBlob = null; //initialing a variable that would help in creation of URL
+let recorder = null; // initialising recorder variable
 let chunks = []; // This variable would help in identifying the format of the video data
 let stream = null // this variable is initialised for using screen recording
 // This function is activated when record button is clicked.
