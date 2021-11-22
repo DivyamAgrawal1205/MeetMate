@@ -78,18 +78,18 @@ img {
 
 #alerts-cont {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /*Flex properties */
     align-items: center;
 }
 
 #host {
-    font-size: 2rem;
+    font-size: 2rem;  /* relative sizing*/
     margin-top: 1.5%;
-    cursor: pointer;
+    cursor: pointer;   /*clickable */
 }
 
 #speech_clk {
-    display: none;
+    display: none;   /*making toggling effect */
 }
 
 #stop {
