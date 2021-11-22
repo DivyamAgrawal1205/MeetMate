@@ -106,7 +106,7 @@ textarea {
     resize: none;
     margin-top: 2%;
     background-color: #CEE5D0;
-    border: 2px solid #888 !important;
+    border: 2px solid #888 !important;  /* Avoiding conflicts*/
     border-radius: 10px !important;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: darkslateblue !important;
@@ -123,11 +123,11 @@ textarea {
 } */
 
 .textarea::-webkit-scrollbar {
-    width: 12px;
+    width: 12px;   
 }
  
 .textarea::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3); /*Custom styles to the scroll bar */
     border-radius: 10px;
 }
  
