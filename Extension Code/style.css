@@ -30,7 +30,7 @@ button {
     
 }
 button:focus {
-    outline: none !important;
+    outline: none !important; /* removing outline when clicked */
 }
 
 #sec-1 {
