@@ -1,6 +1,6 @@
 //this function is activated when screenshot button is clicked.
 async function TakeScreenShot(){    
-    scShot = await navigator.mediaDevices.getDisplayMedia({
+    scShot = await navigator.mediaDevices.getDisplayMedia({ //this variable fetches the display media i.e. Display Screen 
         video: {
             mediaSource : 'screen'
         },
