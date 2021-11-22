@@ -15,7 +15,7 @@ async function TakeScreenShot(){
     //As we have to display a new image everytime when the Screenshot Button is clicked , we are adding a new canvas element.  
     shotCanvas = document.createElement('canvas');
     shotCanvas.width = 800;           // this width coincedentially matches the width of the pdf so we used it!
-    shotCanvas.height = 450;           // also , to maintain general 16:9 ratio of screen for optimal screen shot , we used this value.
+    shotCanvas.height = 450;           // also ,in order to maintain general 16:9 ratio of screen for optimal screen shot , we used this value.
     
     //To display Date and Time
     shotTime = document.createElement('p');
@@ -23,7 +23,7 @@ async function TakeScreenShot(){
      // paragraph tag was the simplest element where we could have inserted the canvas
      // we fetched the paragraph by its tag and not by its id as fetching by id just don't work
      //so we fetched the paragraph tag using its tag name , which had the id "screenshotArea"
-    pageBody = document.getElementsByTagName("p")[0];
+    paraBody = document.getElementsByTagName("p")[0];
     paraBody.appendChild(shotTime);
     pageBody.appendChild(shotCanvas);//inserting(or appending) the canvas in paragraph(id : screenshotArea)
     
