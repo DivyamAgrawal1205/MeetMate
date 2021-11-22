@@ -26,6 +26,10 @@ async function TakeScreenShot(){
     pageBody = document.getElementsByTagName("p")[0];
     paraBody.appendChild(shotTime);
     pageBody.appendChild(shotCanvas);//inserting(or appending) the canvas in paragraph(id : screenshotArea)
+    
+    let currentDate = new Date(); // acessing the whole date
+    let currentDateString = currentDate.getDate() + '-' + (currentDate.getMonth() + 1) + '-' + currentDate.getFullYear(); // creating a string in Indian Date Format
+    let dateTimeString = currentDateString + ',' + currentDate.getHours()  + "-"+  currentDate.getMinutes() + '-' + currentDate.getSeconds(); // creating final date string adding time
 
     shotCanvasContext = shotCanvas.getContext('2d');
     shotCanvasContext.drawImage(shotMap , 0 , 0 ,800, 450 );
