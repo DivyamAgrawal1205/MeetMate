@@ -63,7 +63,7 @@ button:focus {
 h3 {
     margin-bottom: 2%;
     margin-top: 0;
-    font-weight: 600 !important;
+    font-weight: 600 !important; /* avoiding conflict with css framework */
     font-size: 20px;
     
 }
