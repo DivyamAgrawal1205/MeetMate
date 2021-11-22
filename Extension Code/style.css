@@ -41,15 +41,15 @@ button:focus {
 
 
 
-#tips {
-    height: fit-content;
+#tips { /* currently not in use */
+    height: fit-content; /* adjustable */
     width: 20%;
     background-color: aquamarine;
     
     
     
 }
-#status-cont {
+#status-cont {  /* attentiveness container */
     display: flex;
     text-align: center;
 }
