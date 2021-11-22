@@ -3,10 +3,11 @@ let recorder = null; // initialising recorder variable
 let chunks = []; // This variable would help in identifying the format of the video data
 let stream = null; // this variable is initialised for using screen recording
 let audio = null; // this variable is initialised for using screen recording
+
 // This function is activated when record button is clicked.
 async function startRecord() {
     try {
-        stream = await navigator.mediaDevices.getDisplayMedia({  //This variable fetches the user media i.e. Display Screen.
+        stream = await navigator.mediaDevices.getDisplayMedia({  //This variable fetches the display media i.e. Display Screen.
             video: {
                 mediaSource: 'screen'  //Recording screen through stream variable.
             },
@@ -18,12 +19,13 @@ async function startRecord() {
 				sampleRate: 44100,
 			},
         });
-        mixedStream = new MediaStream([...stream.getTracks(), ...audio.getTracks()])  //Intialising a variable that starts both screen recording and audio recording.
+        mixedStream = new MediaStream([...stream.getTracks(), ...audio.getTracks()]);  //Intialising a variable that starts both screen recording and audio recording.
         recorder = new MediaRecorder(mixedStream); // Intialaising a variable to control the screen and audio recording.
         recorder.ondataavailable = (e) => chunks.push(e.data); // storing the recording data in chunks variable
         recorder.start(); // Starting the screen and audio recording.
         recorder.onstop = onstop; // Forwarding to onstop function in case when recording is stopped.
-    } catch (error) {
+    } 
+    catch (error) {
         window.alert(error) // Alerting the user of any errors.
 
     }
