@@ -7,9 +7,16 @@ Second one is jsPDF
 so now its understood that whatever we want to show in the PDF, we have to show it on the HTML page itself
 That's why we have to display the screenshots(we absolutely never wanted to increase the space of the page :( ) 
 */
-
-function goPDF (){ // This function gets activated  when we click Download button calls html2pdf API and saves the contents of the element of id = "topdf"
-    
+//This function gets activated  when we click Download button and saves the contents of the element of id = "pdfDiv"
+function goPDF (){ 
+    //to access current date and time
+    let currentDate = new Date(); // acessing the whole date
+    let currentDateString = currentDate.getDate() + '-' + (currentDate.getMonth() + 1) + '-' + currentDate.getFullYear(); // creating a string in Indian Date Format
+    let dateTimeString = currentDateString + ',' + currentDate.getHours()  + "-"+  currentDate.getMinutes(); // creating final date string adding time
+    var additionalConfig ={
+        margin : 1,
+        filename : 'MeetMatePDF_'+ dateTimeString + '.pdf'
+      };
     var pdf =html2pdf().from(document.getElementById("topdf")).save();
     return pdf;
     }
