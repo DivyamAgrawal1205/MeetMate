@@ -17,6 +17,7 @@ function goPDF (){
         margin : 1,
         filename : 'MeetMatePDF_'+ dateTimeString + '.pdf'
       };
-    var pdf =html2pdf().from(document.getElementById("topdf")).save();
-    return pdf;
+      var pdfDivision = document.getElementById("pdfDiv"); // accessing the division that contains both Text and Screenshots 
+      var pdf =html2pdf().set(additionalConfig).from(pdfDivision).save(); // calling the html2pdf API 
+      return pdf;  // returning the pdf variable and and saving the PDF file in the user's device.
     }
