@@ -21,5 +21,8 @@ recognition.addEventListener('result', e => {
         .map(result => result.transcript)
         .join('') //joining the transcript array into string by spaces to create representable statements
 
-        document.getElementById("textArea").innerHTML = transcript; //inserting result in the text area
+        document.getElementById("textArea").innerHTML = transcript; //updating the whole result result in the text area
+                                                                    //we haven't added the changes using '+=' as it used to repeat itself three times 
+                                                                    //using that method and that is why we have to dispaly screenshots and speech to text
+                                                                    //results on different elements
 });
