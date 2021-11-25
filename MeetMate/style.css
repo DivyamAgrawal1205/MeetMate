@@ -121,8 +121,8 @@ img {
     
 }
 
-#textArea {
-    overflow-y: auto;    /* Scrollable*/
+#speechpara {
+    overflow: auto;    /* Scrollable*/
     padding-left: 2%;
     padding-top: 2%;
     font-family:'Courier New', Courier, monospace !important;
@@ -140,6 +140,7 @@ img {
     color: darkslateblue !important;
     font-weight: 600;
 }
+
 
 
 /* .textarea::-webkit-scrollbar{
