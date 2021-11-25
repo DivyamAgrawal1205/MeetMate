@@ -104,7 +104,8 @@ img {
 #textArea {
     overflow-y: auto;    /* Scrollable*/
     padding-left: 2%;
-
+    padding-top: 2%;
+    font-family:'Courier New', Courier, monospace !important;
     display: inline-block;
     box-sizing: border-box;
     border: 1px solid black;
