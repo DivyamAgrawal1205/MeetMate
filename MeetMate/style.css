@@ -5,8 +5,8 @@
 
 body {
     margin: 0;
-    height: 95vh;  /*auto */
-    
+    height: auto;  /*auto */
+    width : 100px
     
 }
 
@@ -122,14 +122,14 @@ img {
 }
 
 #textArea{
-    overflow: auto;    /* Scrollable*/
+    overflow: visible;    /* Scrollable*/
     padding-left: 2%;
     padding-top: 2%;
     font-family:'Courier New', Courier, monospace !important;
     display: inline-block;
     box-sizing: border-box;
     border: 1px solid black;
-    height: 250px !important;
+    height: auto !important;
     width: 100% !important;
     resize: none;
     margin-top: 2%;
