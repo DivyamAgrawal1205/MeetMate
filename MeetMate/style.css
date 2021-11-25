@@ -121,7 +121,7 @@ img {
     
 }
 
-#speechpara {
+#textArea{
     overflow: auto;    /* Scrollable*/
     padding-left: 2%;
     padding-top: 2%;
