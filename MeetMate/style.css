@@ -10,6 +10,26 @@ body {
     
 }
 
+#meetmate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#title {
+    font-size: 40px;
+    color: black;
+    font-weight: 600;
+    font-family: 'Comforter', cursive;
+    letter-spacing: 2px;
+} 
+
+#logo {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+}
+
 #main {
     display: inline-block;   
     background-color: #FAF1E6;  /*FAF1E6   FDFAF6*/
