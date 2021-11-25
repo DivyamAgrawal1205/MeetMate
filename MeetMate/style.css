@@ -5,7 +5,8 @@
 
 body {
     margin: 0;
-    height: auto;
+    height: 95vh;  /*auto */
+    
     
 }
 
@@ -100,10 +101,15 @@ img {
     
 }
 
-textarea {
+#textArea {
     overflow-y: auto;    /* Scrollable*/
+    padding-left: 2%;
+    
     display: inline-block;
-    height: 40vh !important;
+    box-sizing: border-box;
+    border: 1px solid black;
+    height: 250px !important;
+    width: 100% !important;
     resize: none;
     margin-top: 2%;
     background-color: #CEE5D0;
