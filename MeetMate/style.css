@@ -52,6 +52,7 @@ button:focus {
 #sec-3 {  /* attentiveness container */
     display: flex;
     text-align: center;
+    margin-top: 1%;
 }
 
 #tipslist{
