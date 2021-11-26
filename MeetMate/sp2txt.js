@@ -16,21 +16,23 @@ words.appendChild(textArea);// inserting textarea as a node in division as a cla
 
 var previousTranscipt = "";
 
+setInterval(function(){
+    let currentDate = new Date(); // acessing the whole date
+    let currentDateString = currentDate.getDate() + '-' + (currentDate.getMonth() + 1) + '-' + currentDate.getFullYear(); // creating a string in Indian Date Format
+    let dateTimeString = currentDateString + ',' + currentDate.getHours()  + ":"+  currentDate.getMinutes() + ":" + currentDate.getSeconds(); // creating final date string
+    document.getElementById("textArea").innerHTML+=dateTimeString;
+},60000)
+
 //mapping the speech recognition result from an Array to a transcript variable
 recognition.addEventListener('result', e => {
     const transcript = Array.from(e.results) // creating a transcript array using results from the Speech Recognition
         .map(result => result[0])
         .map(result => result.transcript)
         .join('') //joining the transcript array into string by spaces to create representable statements
-
-        document.getElementById("textArea").innerHTML = transcript; //updating the whole result result in the text area
-                                                                    //we haven't added the changes using '+=' as it used to repeat itself three times 
-                                                                    //using that method and that is why we have to dispaly screenshots and speech to text
-                                                                    //results on different elements
        
        
         var latestSentence = transcript.substring(previousTranscipt.length);
-        console.log(latestSentence);
+        document.getElementById("textArea").innerHTML+=latestSentence;
         previousTranscipt = transcript;
         function tokenize (input) {
             return input
@@ -47,7 +49,6 @@ recognition.addEventListener('result', e => {
             .then(response => response.json())
             .then(data => {
                     for(word in tokens){
-                        console.log(tokens[word]);
                         if (typeof data[tokens[word]] === 'undefined') {
                                 continue;
                         }
@@ -60,4 +61,5 @@ recognition.addEventListener('result', e => {
                         document.getElementById("warn").innerText = "Warning!";
                     }
                 })
+
 });
