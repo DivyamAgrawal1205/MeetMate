@@ -25,4 +25,32 @@ recognition.addEventListener('result', e => {
                                                                     //we haven't added the changes using '+=' as it used to repeat itself three times 
                                                                     //using that method and that is why we have to dispaly screenshots and speech to text
                                                                     //results on different elements
+        function tokenize (input) {
+            return input
+                    .replace(/[^a-zA-Z ]+/g, '')
+                    .replace('/ {2,}/',' ')
+                    .toLowerCase()
+                    .split(' ');
+        }
+        
+        tokens = tokenize(transcript);
+        
+        var score = 0;
+        fetch("./AFINN.json")
+            .then(response => response.json())
+            .then(data => {
+                    for(word in tokens){
+                        console.log(tokens[word]);
+                        if (typeof data[tokens[word]] === 'undefined') {
+                                continue;
+                        }
+                        score += data[tokens[word]];
+                    }
+                    console.log(score);
+                    if(score >= 0){
+                        document.getElementById("warn").innerText = "All good";}
+                    else{
+                        document.getElementById("warn").innerText = "Warning!";
+                    }
+                })
 });
