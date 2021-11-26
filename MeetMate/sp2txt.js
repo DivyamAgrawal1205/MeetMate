@@ -14,6 +14,8 @@ recognition.continuous = true; // making speech recognition continuous
 var words = document.querySelector('.words'); //fectching the division in index.html with class "words"
 words.appendChild(textArea);// inserting textarea as a node in division as a class "words"
 
+var previousTranscipt = "";
+
 //mapping the speech recognition result from an Array to a transcript variable
 recognition.addEventListener('result', e => {
     const transcript = Array.from(e.results) // creating a transcript array using results from the Speech Recognition
@@ -25,6 +27,11 @@ recognition.addEventListener('result', e => {
                                                                     //we haven't added the changes using '+=' as it used to repeat itself three times 
                                                                     //using that method and that is why we have to dispaly screenshots and speech to text
                                                                     //results on different elements
+       
+       
+        var latestSentence = transcript.substring(previousTranscipt.length);
+        console.log(latestSentence);
+        previousTranscipt = transcript;
         function tokenize (input) {
             return input
                     .replace(/[^a-zA-Z ]+/g, '')
@@ -33,7 +40,7 @@ recognition.addEventListener('result', e => {
                     .split(' ');
         }
         
-        tokens = tokenize(transcript);
+        tokens = tokenize(latestSentence);
         
         var score = 0;
         fetch("./AFINN.json")
