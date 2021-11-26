@@ -19,7 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comforter&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
-
+    <script src="https://cdn.plot.ly/plotly-2.6.3.min.js"></script>
 </head>
 <body>
     <section id="main">
@@ -30,30 +30,33 @@
         <section id="sec-0"> </section>  <!-- this sec includes user login status and profile--  would probably inlcude in next update :)-->
 
         <section id="sec-1">   <!-- This Section corresponds to Screen Recording Feature-->         
-            <button type="button" class="btn btn-success" id="record" title="Record" onclick="startRecord()" >Record <i class="bi bi-camera-reels"></i> </button> <!-- This is the Record Button which calls startRecord function in scrdr.js to start screen recording-->            
+            <button type="button" class="btn btn-success" id="record" title="Record" onclick="startRecord()" >Record <i class="bi bi-camera-reels"></i> </button> <!-- This is the Record Button which calls startRecord function in scrdr.js to start screen recording-->    
+            <button type="button" class="btn btn-dark" id = "warn">CLASS STATUS <i class="fa fa-exclamation-circle"></i></button>        
             <button type="button" class="btn btn-danger" id="stop" title="Stop recording" onclick="stopScreen()">Stop Recording <i class="bi bi-stop-circle"></i> </button><!-- This is the Stop Recording button which calls stopScreen function in scrdr.js to stop screen recording-->
             <a href="#"  id="download"  ><button type = "button" class="btn btn-info" id="dwn_vid_btn" disabled> Download Video <i class="bi-play-circle" ></i></button></a><!-- This is the Download button which downloads the most recent recorded session-->
         </section>
         
-        <section id="sec-3"><!-- This section corresponds to Attentiveness Tracking Feature-->
+        <section id="sec-2"><!-- This section corresponds to Attentiveness Tracking Feature-->
             <div>
                 <main>
-                    <h3>Current Status of Attentiveness</h3>
-                    <img src="https://cdn.slidemodel.com/wp-content/uploads/4208-01-flat-bold-business-plan-template-16x9-4.jpg" alt="attentive-graph"> <!-- Here this image will be replaced by a live attention depicting graph -->
+                    <h3 id ="p1">Current Status of Attentiveness</h3>
+                    <div id = "attentivenessChart"></div> <!-- Here this image will be replaced by a live attention depicting graph -->
                 </main>
             </div>
         </section>
 
-        <section id="sec-4"> <!-- This section corresponds to the Meeting Summary Feature -->
+        <section id="sec-3"> <!-- This section corresponds to the Meeting Summary Feature buttons -->
             <div id="alerts-cont">
                 <i class="bi bi-person-circle" id="host" title="Meet Host"></i>   <!-- Your Meeting Host , This would also be there in our next update -->                  
-                <button type="button" class="btn btn-info" title="Download the report" onclick="goPDF()">Download <i class="fas fa-arrow-alt-circle-down"></i> </button> <!-- This is the Download Button which calls goPDF() function from PDFgen.js and downloads a PDF file  -->
-                <button type="button" class="btn btn-warning" title="Taking a screenshot" id ="ScrnShot" onclick="TakeScreenShot()">ScreenShot <i class="fa">&#xf0c4</i> </button>  <!-- This is ScreenShot button that calls TakeScreenShot() function in ScreenShot.js to take the Screen Shot--> <!-- fa fa-scissors should have worked in i tag, Ankit please check-->
+                <button type="button" class="btn btn-info" title="Download the report" onclick="goPDF()">Download PDF <i class="fas fa-arrow-alt-circle-down"></i> </button> <!-- This is the Download Button which calls goPDF() function from PDFgen.js and downloads a PDF file  -->
+                <button type="button" class="btn btn-warning" title="Taking a screenshot" id ="ScrnShot" onclick="TakeScreenShot()">ScreenShot <i class="fa">&#xf0c4</i> </button>  <!-- This is ScreenShot button that calls TakeScreenShot() function in ScreenShot.js to take the Screen Shot-->
                 <button type="button" class="btn btn-light" id="speech_nt_clk" title="Captions-off" onclick="speech2textOn()">Speech-to-text <i class="far fa-closed-captioning"></i> </button><!-- This button is Speech To Text Off Button and calls sp2txton() funtion from sp2txt.js to start speech Recognition-->
                 <button type="button" class="btn btn-dark" id="speech_clk" title="Captions-on" onclick="speech2textOff()">Speech-to-text <i class="fas fa-closed-captioning"></i> </button><!-- This is Speech to Text On button gets activated when Speech To Text Off button is clicked-->
 
             </div>
-            <div class="words" id = "pdfDiv" contenteditable="true" > <!-- This division with id="pdfDiv" is accessed by goPDF() function in PDFgen.js-->
+        </section>
+        <section id = "sec-4">
+            <div class="words" id = "pdfDiv"  > <!-- This division with id="pdfDiv" is accessed by goPDF() function in PDFgen.js-->
                 <!-- We first planned to keep the screenshots and Speech to text result under same tag but due to diffences in implementations,-->
                 <!-- we used different tags for speech to text and screenshot-->
                 <!-- The reason is that speech to text updates its results completely rather than adding the changes(reason explained in sp2txt.js),-->
@@ -70,5 +73,8 @@
     <script async src="script.js"></script> <!-- source directed to main Script code/module --> 
     <script src="PDFgen.js"></script>  <!-- source directed to PDF Generation code/module -->
     <script src="screenshot.js"></script> <!-- source directed to Screenshot code/module -->
+    <script src="webgazer.js"></script> 
+    <script src="eye.js"></script>
+    
 </body>
 </html>
