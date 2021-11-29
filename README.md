@@ -13,7 +13,7 @@
 ## DEPLOYMENT
 ### There are two ways to implement the application
 
-#### Using our Heroku Application : ![MeetMate](https://meetmate-v1.herokuapp.com/)
+#### Using our Heroku Application : [MeetMate](https://meetmate-v1.herokuapp.com/)
 
 
 
