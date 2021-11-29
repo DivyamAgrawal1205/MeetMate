@@ -20,6 +20,11 @@ var attStatus = null; // this variable stores the attentiveness Status and displ
 var totalTime = 0; // this variable calculates the total Time (as it is used to find percentage it is more like ideal attentiveness of full score every time)
 var totalAttScore = 0; // this variable adds up the attScore at each iteration
 
+var prevXprediction1 = 0;//variable to store the last xprediction
+var prevXprediction2 = 0;//variable to store the second last xprediction
+var prevYprediction1 = 0;//variable to store the last yprediction
+var prevYprediction2 = 0;//variable to store the second last yprediction
+
 //This is a periodic function whose cycle period is 2 seconds.
 /*This function does the following things:-
     1.) Generates the prediction of attentiveness
@@ -30,8 +35,24 @@ var totalAttScore = 0; // this variable adds up the attScore at each iteration
   we used the dimensions of screen and caculated ratios of a typical meet in Google Meet.
 */
 setInterval(function(){
+    //Whenever the user leaves the meet, webgazer.js shows the last reading only
+    //so, it used to show previous score even when user is not present (i.e. it can show that user is attentive even when user is not there without this check)
+    //so by if the last two readings are same(as it is impossible to do so due to webgazer's unstability) to the current readings
+    //then the user gets zero attScore, hence beep Warning!
+    if(prevXprediction2==prevXprediction1 && prevXprediction1==xprediction && prevYprediction2==prevYprediction1 && prevYprediction1 == yprediction){
+        attScore = -1;//lowest score
+        attStatus = "User Not Present!";
+        //audio production
+        var audioCtx = new (window.AudioContext || window.webkitAudioContext || window.audioContext);//calling the APIs
+        var oscillator = audioCtx.createOscillator();// creating the ocsillator at predefined frequency
+        var gainNode = audioCtx.createGain();// creating the variable to connect at the predefined volume
+        oscillator.connect(gainNode);// connecting oscillator and volume variable
+        gainNode.connect(audioCtx.destination);// connecting the volume variable to speaker
+        oscillator.start(audioCtx.currentTime); // starting the oscillator
+        oscillator.stop(audioCtx.currentTime + ((150 || 500) / 1000));// stopping the oscillator 
+    }
     //This range is given the highest score as this region makes the region where screen is shared in a typical meet
-    if ((xprediction >= 0 && xprediction <= 1070) && (yprediction >= 80 && yprediction <= 680)) {
+    else if ((xprediction >= 0 && xprediction <= 1070) && (yprediction >= 80 && yprediction <= 680)) {
         attScore =2;//highest Score
         attStatus = "Attentive!!"; 
     } 
@@ -43,7 +64,7 @@ setInterval(function(){
     //This region is given the lowest score as this region is outside the meeting area
     //when this criteria is satisfied, it produces a beep to alert the user!
     else {
-        attScore = 0;//lowest score
+        attScore = 0;//low score
         attStatus = "Very Less Attentive!";
         //audio production
         var audioCtx = new (window.AudioContext || window.webkitAudioContext || window.audioContext);//calling the APIs
@@ -54,6 +75,11 @@ setInterval(function(){
         oscillator.start(audioCtx.currentTime); // starting the oscillator
         oscillator.stop(audioCtx.currentTime + ((150 || 500) / 1000));// stopping the oscillator 
     }
+
+    prevXprediction2 = prevXprediction1;// storing last xprecdiction in second last xprediction
+    prevYprediction2 = prevYprediction1;// storing last yprecdiction in second last yprediction
+    prevXprediction1 = xprediction;// storing current xprecdiction in last xprediction
+    prevYprediction1 = yprediction;// storing current yprecdiction in last yprediction
 
     //calculating the attPercentage using the formula((real time cumulative attentiveness score)/(ideal(full score) attentiveness score))
     // and displaying it to the user
