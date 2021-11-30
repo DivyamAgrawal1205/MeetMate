@@ -6,7 +6,7 @@
 body {
     margin: 0;
     height: auto;  /*auto */
-    width : 100px
+    
     
 }
 
@@ -35,7 +35,7 @@ body {
     background-color: #c3b9df;  /*FAF1E6   FDFAF6*/
     padding: 1%;
     width: 30vw;
-    min-width: 400px;
+    min-width: 450px;
     height: inherit;  /* from the parent element*/
     
 }
@@ -102,6 +102,10 @@ img {
     display: flex;
     justify-content: space-between; /*Flex properties */
     align-items: center;
+}
+
+#alerts-cont button {
+    margin-right: 20px;
 }
 
 #host {
