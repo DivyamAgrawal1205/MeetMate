@@ -26,8 +26,8 @@
 ## DEPLOYMENT
 ### There are two ways to implement the application
 
-#### Using our Heroku Application : [MeetMate](https://meetmate-v1.herokuapp.com/)
-#### Using a local server to start the index.html file 
+#### 1.) Using our Heroku Application : [MeetMate](https://meetmate-v1.herokuapp.com/)
+#### 2.) Using a local server to start the index.html file 
 
 In order to achieve this, we show an examole of VS Code:
 
