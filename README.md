@@ -34,8 +34,7 @@ In order to achieve this, we show an examole of VS Code:
 ##### Step-1
 Open Live Server Extension in VS Code: ![image](https://user-images.githubusercontent.com/83166347/143993763-8bf702b7-ff40-4d3f-9a6c-ed327d8aa0cd.png)
 ##### Step-2
-Right Click on your .html file and choose Open with Live Server: ![image](https://user-images.githubusercontent.com/83166347/143993919-edfc027d-8e86-40f3-af49-168308457356.png)
-
+Right Click on your .html file and choose Open with Live Server: ![image](https://user-images.githubusercontent.com/83166347/143997048-778f5197-c60d-44c5-b7fa-e9df47ab83da.png)
 
 ## FEATURES
 
