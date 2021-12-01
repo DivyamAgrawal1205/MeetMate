@@ -1,5 +1,5 @@
 ## Hi Everyone! We're Team MATES!!
-### Our team consists of Ankit Juneja - 20103061, Aryan Jindal -20103083, Divyam Agrawal(Leader)- 20103088, Anand Kataria-20103089 and Aayush Singh Panwar-20103091.
+### Our team consists of Ankit Juneja - 20103060, Aryan Jindal -20103083, Divyam Agrawal(Leader)- 20103088, Anand Kataria-20103089 and Aayush Singh Panwar-20103091.
 # MeetMate
 
 ## An easy to use cloud web application for your everyday online meeting needs.
