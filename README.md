@@ -39,6 +39,13 @@ Right Click on your .html file and choose Open with Live Server: ![image](https:
 ## FEATURES
 
 ### ATTENTIVENESS TRACKING
+
+As we all know that sometimes we get distracted on small notice. So a basic solution to this problem is that if we get warning when ever our attention is low towards our screen, or when ever we are given a score corresponding to our attention span which will motivate user for paying attention.
+![image](https://user-images.githubusercontent.com/83166347/144174972-2e8172cd-d5d7-47a7-857e-15cce38b1711.png)
+
+
+
+
 ### SPEECH TO TEXT 
 ### SCREEN RECORDING
 ### CLASS STATUS WARNING
