@@ -48,10 +48,7 @@ As we all know that sometimes we get distracted on small notice. So a basic solu
   Storing all the previous scores and time stamps that generate after every two seconds in two different arrays, we plot a live attentiveness vs time graph.
   
   #### DEMONSTRATION 
-  https://user-images.githubusercontent.com/83166347/144180671-0d5a1c81-b789-4fb0-834d-588101ca9a5c.mp4
-
-
-
+  https://user-images.githubusercontent.com/83166347/144181892-3a6dbcc9-9f73-46ca-9ad3-2922ce860d42.mp4
 
 ### SPEECH TO TEXT 
 ### SCREEN RECORDING
