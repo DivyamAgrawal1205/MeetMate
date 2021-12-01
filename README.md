@@ -1,6 +1,5 @@
 ## Hi Everyone! We're Team MATES!!
-### Our team consists of Divyam Agrawal, Ankit Juneja, Aryan Jindal, Aayush Singh Panwar, Anand Kataria.
-
+### Our team consists of Ankit Juneja - 20103061, Aryan Jindal -20103083, Divyam Agrawal(Leader)- 20103088, Anand Kataria-20103089 and Aayush Singh Panwar-20103091.
 # MeetMate
 
 ## An easy to use cloud web application for your everyday online meeting needs.
@@ -47,7 +46,8 @@ As we all know that sometimes we get distracted on small notice. So a basic solu
   As soon as MeetMate starts, webgazer.js is initiated to predict eye location on the screen and return the x & y coordinates. Then after each two seconds , we generate         attentiveness score and status by following the criteria shown in our README through x & y coordinates and a beep sound at low attentiveness. We also generate a cumulative attentiveness score in form of percentage.
 
   Storing all the previous scores and time stamps that generate after every two seconds in two different arrays, we plot a live attentiveness vs time graph.
-
+  
+  #### DEMONSTRATION 
 
 
 
