@@ -39,9 +39,16 @@ Right Click on your .html file and choose Open with Live Server: ![image](https:
 ## FEATURES
 
 ### ATTENTIVENESS TRACKING
-
 As we all know that sometimes we get distracted on small notice. So a basic solution to this problem is that if we get warning when ever our attention is low towards our screen, or when ever we are given a score corresponding to our attention span which will motivate user for paying attention.
-![image](https://user-images.githubusercontent.com/83166347/144174972-2e8172cd-d5d7-47a7-857e-15cce38b1711.png)
+
+  #### IMPLEMENTATION
+  As soon as the user starts using MeetMate , the attentiveness tracking starts and produces a attScore at every two seconds according to criteria shown above and the attention status and attentive score is displayed to the user with a live plot of attentiveness vs time. A beep is produced when the attentiveness is too low. 
+  
+  As soon as MeetMate starts, webgazer.js is initiated to predict eye location on the screen and return the x & y coordinates. Then after each two seconds , we generate         attentiveness score and status by following the criteria shown in our README through x & y coordinates and a beep sound at low attentiveness. We also generate a cumulative attentiveness score in form of percentage.
+
+  Storing all the previous scores and time stamps that generate after every two seconds in two different arrays, we plot a live attentiveness vs time graph.
+
+
 
 
 
