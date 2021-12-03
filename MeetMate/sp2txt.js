@@ -62,10 +62,15 @@ recognition.onend = function(){
 }
 //adding time after every one minute to the result for user's reference
 setInterval(function(){
+    timeBreak = document.createElement('br');//creating a break tag so that it would be easy for the user to see the time
+    textBody = document.getElementsByTagName("p")[1];// fetching textarea
+    textBody.appendChild(timeBreak);//appending break
     let currentDate = new Date(); // acessing the whole date
     let currentDateString = currentDate.getDate() + '-' + (currentDate.getMonth() + 1) + '-' + currentDate.getFullYear(); // creating a string in Indian Date Format
     let dateTimeString = currentDateString + ',' + currentDate.getHours()  + ":"+  currentDate.getMinutes() + ":" + currentDate.getSeconds(); // creating final date string
     document.getElementById("textArea").innerHTML+=dateTimeString;
+    timeBreak2 = document.createElement('br');//creating another break
+    textBody.appendChild(timeBreak2);// appending break
 },60000)
 
 //THIS IS A VERY IMPORTANT PART OF CODE
