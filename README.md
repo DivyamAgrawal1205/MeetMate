@@ -35,6 +35,12 @@ Open Live Server Extension in VS Code: ![image](https://user-images.githubuserco
 #### Step-2
 Right Click on your .html file and choose Open with Live Server: ![image](https://user-images.githubusercontent.com/83166347/143997048-778f5197-c60d-44c5-b7fa-e9df47ab83da.png)
 
+# QUICK DEMONSTRATION 
+
+For detailed demonstration for each feature, please refer to features section.
+
+https://user-images.githubusercontent.com/83166347/144438022-1edb1754-73b3-4d53-8dfd-a309717238e6.mp4
+
 # FEATURES
 
 ## ATTENTIVENESS TRACKING
