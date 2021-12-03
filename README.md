@@ -67,6 +67,8 @@ Sometimes the things that the host explains is more understandable than what the
   After clicking sp2txt button the recognition starts and the webkitSpeechRecognition API is fetched and is made continuous.We tokenize the last sentence and analyze those tokens through a dataset and generate a speech score by adding the values of charted words. If the speech score is positive then 'All good' is notified to the user else user is notified with a 'Warning' and three small beeps.Incase the sp2txt stops itself then we warn the user with two beeps and a window alert.
 
   #### DEMONSTRATION
+  https://user-images.githubusercontent.com/83166347/144645825-c4bb5776-03fc-4440-9088-7127c6eef7f6.mp4
+
 
 
 ## SCREEN RECORDING
